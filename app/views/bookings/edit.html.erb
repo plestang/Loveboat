@@ -1,0 +1,16 @@
+<div class="container">
+    <h1 class="text-center">Edit your booking for <%= @boat.name %></h1>
+
+    <%= simple_form_for [@boat, @booking] do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+
+    <% end %>
+    <div class="text-center">
+      <p><%= link_to "Back to list of boats", boats_path %></p>
+    </div>
+
+  </div>
+</div>
+
