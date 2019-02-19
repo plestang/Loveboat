@@ -1,3 +1,7 @@
 class Boat < ApplicationRecord
-mount_uploader :photo, PhotoUploader
+
+  has_many :bookings
+
+  mount_uploader :photo, PhotoUploader
+
 end
