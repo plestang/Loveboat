@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def show
     authorize @user
@@ -37,7 +37,7 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+    params.require(:user).permit(:first_name, :last_name, :email, :phone_number, :photo)
   end
 
   def set_user

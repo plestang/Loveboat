@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_111325) do
 
+<<<<<<< HEAD
+=======
+ActiveRecord::Schema.define(version: 2019_02_19_142244) do
+
+>>>>>>> fefe9b8d5c10bb7f97df6a66dd63ef6f0e9b5096
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -22,6 +26,8 @@ ActiveRecord::Schema.define(version: 2019_02_19_111325) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -48,10 +54,12 @@ ActiveRecord::Schema.define(version: 2019_02_19_111325) do
     t.string "last_name"
     t.string "phone_number"
     t.float "rating"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "boats", "users"
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
 end
