@@ -2,7 +2,7 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @boats = Boat.all
+    @boats = policy_scope(Boat)
   end
 
   def show
@@ -41,7 +41,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:price_per_day, :category, :description)
+    params.require(:boat).permit(:price_per_day, :category, :description, :photo)
   end
 
   def set_boat
