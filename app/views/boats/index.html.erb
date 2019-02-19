@@ -1,4 +1,16 @@
-<h1>LoveBoat:</h1>
+  <div class="row">
+    <% @boats.each do |boat| %>
 
-<% @boats.each do |boat| %>
-<%= link_to boat.price_per_day, cocktail_path(cocktail) %>
+    <div class="card-trip">
+      <img src=<%= cl_image_path boat.photo %>>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= boat.category %></h2>
+          <p><%= boat.description %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= link_to boat.price_per_day, boat_path(boat) %></h2>
+        <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered"/>
+      </div>
+    </div>
+    <% end %>
+  </div>
