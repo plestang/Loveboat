@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
     <!-- link_to to insert once done by mathew -->
-    <%= image_tag "logo.png", class: "navbar-wagon-brand"%>
+    <%= link_to "#{image_tag "sextant_logo.png", class: "navbar-wagon-brand"}".html_safe, root_path %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -13,11 +13,12 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <img src="<%= current_user.photo %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "Profile", root_path %></a></li>
+          <li><%= link_to "Dashboard", root_path %></li>
+          <li><%= link_to "Add a boat", new_boat_path %></li>
+          <li><%= link_to "Log out", root_path %></li>
         </ul>
       </div>
     </div>

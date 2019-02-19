@@ -2,3 +2,11 @@ Specific CSS for your home-page
 .container{
   width: 80vw;
 }
+
+.home-cards{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  flex-wrap: wrap;
+}
