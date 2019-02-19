@@ -21,10 +21,4 @@ class BookingPolicy < ApplicationPolicy
   end
 end
 
-class Scope < Scope
-  def resolve
-    scope.all
-  end
-
-
 end
