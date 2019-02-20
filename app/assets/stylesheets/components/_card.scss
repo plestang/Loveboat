@@ -4,11 +4,9 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin-bottom: 20px;
   flex: 0 0 30%;
-
-
 }
 
-.card-trip > img {
+.card-trip img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -33,6 +31,11 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+}
+
+.card-trip-infos a {
+  font-size: .8em;
+  color: $sea-peach;
 }
 
 .card-trip-infos .card-trip-user {
