@@ -1,5 +1,5 @@
-<div id="photo-banner" class="photo-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= cl_image_path('pexels-photo-273886.jpg') %>');">
-  <%= image_tag "https://via.placeholder.com/100", class: "avatar-100px" %>
+<div id="photo-banner" class="photo-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= @boat.photo.url %>');">
+  <%= image_tag @boat.user.photo.url, class: "avatar-100px" %>
 </div>
 
 
@@ -14,20 +14,19 @@
           <div class="row">
             <div class="options">
 
-              <p> Logos to be inserted ou free text</p>
+              <p> Book as from <%= @boat.price_per_day %> € / day or <%= (@boat.price_per_day * 0.9 * 7).round() %> € / week and save <%= (@boat.price_per_day * 0.1*7).round() %> € </p>
             </div>
             <div class="boat-text">
           </div>
-            <h3><%= @boat.description %></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet architecto sapiente porro perspiciatis, maiores asperiores ab dolorum. Magnam nostrum possimus quis, error cupiditate voluptatem odio modi praesentium, totam libero tenetur.</p>
+            <h3><%= @boat.category %></h3>
+            <p><%= @boat.description %></p>
           </div>
         </div>
       </div>
     </div>
     <div class="col-xs-12 col-md-3">
       <div class="booking">
-        <button class="btn btn-primary" id="book_btn">
-          Book
+        <%= link_to "Book now", new_boat_booking_path(@boat), class: 'btn btn-primary', id:'book_btn'  %>
         </button>
       </div>
     </div>
