@@ -5809,6 +5809,11 @@ slash@^1.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
   integrity sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU=
 
+slick-carousel@^1.8.1:
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/slick-carousel/-/slick-carousel-1.8.1.tgz#a4bfb29014887bb66ce528b90bd0cda262cc8f8d"
+  integrity sha512-XB9Ftrf2EEKfzoQXt3Nitrt/IPbT+f1fgqBdoxO3W/+JYvtEOW6EgxnWfr9GH6nmULv7Y2tPmEX3koxThVmebA==
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -6185,6 +6190,11 @@ svgo@^0.7.0:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
+
+sweetalert2@^8.2.2:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-8.2.2.tgz#b894b328b37c639c388edc482d290c74922f2d36"
+  integrity sha512-gKO69XLVrQ+wb5/geRYIvlRAGsPSUUbPNALuCk34sc7BSd5lWUNWwXffThWcetGDrFO8POTBJY8bbzPS+hCI9Q==
 
 tapable@^0.2.7:
   version "0.2.9"

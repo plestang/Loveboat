@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    sleep 1.5
     @booking = Booking.new(booking_params)
     @booking.boat = Boat.find(params[:boat_id])
     @booking.user = current_user
