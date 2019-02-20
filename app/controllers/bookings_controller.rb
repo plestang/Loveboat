@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    authorize @booking
   end
 
   def create
@@ -54,6 +55,6 @@ class BookingsController < ApplicationController
   end
 
   def set_booking
-    @booking = booking.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 end
