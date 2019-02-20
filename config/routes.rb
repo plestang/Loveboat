@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:destroy, :edit, :update, :show]
 
   resources :users, only: [:destroy, :edit, :update, :show]
+
+  get "/search", to: "boats#search", as: :search
 end
