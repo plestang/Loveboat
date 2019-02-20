@@ -6,6 +6,10 @@
         <h2><%= @user.first_name %> <%= @user.last_name %></h2>
         <p><%= @user.email %></p>
         <p><%= @user.phone_number %></p>
+        <% if @user == current_user  %>
+        <p><a href="#bookings">See my bookings</a></p>
+        <p><%= link_to "Edit", edit_user_path(@user) %> | <%= link_to "Delete", user_path(@user), method: :delete %></p>
+        <% end  %>
     </div>
     <div class="card stats-section">
       <div class="card-content">
@@ -39,17 +43,28 @@
     <% @user.boats.each do |boat| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card-trip">
-          <%= image_tag boat.photo.url %>
+          <%= link_to boat_path(boat) do  %>
+            <%= image_tag boat.photo.url %>
+          <% end  %>
           <div class="card-trip-infos">
             <div>
               <h2><%= boat.category %></h2>
               <p><%= boat.description %></p>
+              <% if boat.user == current_user  %>
+                <p><%= link_to "Edit", edit_user_path(@user) %> | <%= link_to "Delete", user_path(@user), method: :delete %></p>
+              <% end  %>
             </div>
             <h2 class="card-trip-pricing"><%= boat.price_per_day %> €</h2>
           </div>
         </div>
-      </div>
-      <% end  %>
-  </div>
-</div>
 
+      </div>
+    <% end %>
+  </div>
+
+
+
+
+</div>
+  <% end  %>
+</div>

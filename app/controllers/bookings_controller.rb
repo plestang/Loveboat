@@ -1,6 +1,10 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @bookings = policy_scope(Booking.where(user_id: current_user.id).order(created_at: :desc))
+  end
+
   def show
     authorize @booking
   end
@@ -15,11 +19,13 @@ class BookingsController < ApplicationController
   end
 
   def create
+    sleep 1.5
     @booking = Booking.new(booking_params)
     @booking.boat = Boat.find(params[:boat_id])
+    @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :new
     end

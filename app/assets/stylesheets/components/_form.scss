@@ -1,0 +1,29 @@
+.wrapper-form {
+  background-image: url('https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+  color: white;
+  margin: 0;
+  padding: 2em;
+  background-size: cover !important;
+  background-position: center;
+  height: 100vh;
+}
+
+.small-font {
+  font-size: .7em !important;
+}
+
+.form-container {
+  width: 600px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 3px;
+  background-color: white;
+  color: black;
+  opacity: 0.9;
+
+}
+
+.form-container a {
+  font-size: .8em;
+  color: $sea-peach;
+}

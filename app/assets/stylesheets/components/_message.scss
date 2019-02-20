@@ -1,0 +1,57 @@
+#bookings {
+
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+.message:last-child {
+  border-bottom: none;
+}
+
+.message-name {
+  padding-left: 10px;
+  min-width: 50px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+
+.message-date {
+  flex-grow: 1;
+}
+.message-date {
+  padding-left: 20px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+
+.message-date strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+
+
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+}
+.status.accepted {
+  color: #04A366;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
+
+.message-edit {
+  padding-left: 40px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
