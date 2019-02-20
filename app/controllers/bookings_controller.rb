@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.update(booking_params)
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       render :update
     end
