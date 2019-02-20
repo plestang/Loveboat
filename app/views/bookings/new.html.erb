@@ -3,8 +3,8 @@
     <h1 class="text-center">Book today!</h1>
     <div class='form-container'>
       <%= simple_form_for [@boat, @booking] do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
+        <%= f.input :start_date, as: :string, class: 'form-control datepicker', placeholder: 'yyyy/mm/dd'%>
+        <%= f.input :end_date, as: :string, class: 'form-control datepicker', placeholder: 'yyyy/mm/dd' %>
         <div class="btn-container">
           <%= f.button :submit, class: "btn-treehouse" %></div>
         <% end %>
