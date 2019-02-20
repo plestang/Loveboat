@@ -58,6 +58,8 @@ Boat.destroy_all
 
 BOATS_CATEGORY = ["Sailboat","Motorboat","Catamaran","RIB","Houseboat"]
 USERS = [greg, mathieu, alki, pierre]
+PHOTOS = %w(pexels-photo-533595 pexels-photo-531474 pexels-photo-570987 pexels-photo-296278 pexels-photo-382167 pexels-photo-296242 pexels-photo-275637 pexels-photo-351774 pexels-photo-273886 pexels-photo-244517 pexels-photo-218999 pexels-photo-1655166 ship-boat-lake-garda-italy pexels-photo-209978 pexels-photo-127160 sailing-ship-vessel-boat-sea-37859 pexels-photo-1586795 sunrise-phu-quoc-island-ocean pexels-photo-1295036 luxury-yacht-boat-speed-water-163236 light-sunset-water-boat pexels-photo-675764 pexels-photo-1555313 pexels-photo-1007836)
+
   # resource_type = "image"
   # type = "upload"
   # version = 1234567890
@@ -69,8 +71,8 @@ USERS = [greg, mathieu, alki, pierre]
 # PHOTO = "#{resource_type}/#{type}/v#{version}/#{public_id}.#{format}## .
 #   {signature}"
 
-10.times do
-  url = "https://res.cloudinary.com/dmaoc3kjt/image/upload/v1550575042/g6u3tb5embqi6jvigxph.jpg"
+PHOTOS.each do |image|
+  url = "https://res.cloudinary.com/dsiephejy/image/upload/v1550594036/#{image}.jpg"
   boat = Boat.new({
     price_per_day: rand(80...500),
     description: "Some description",
