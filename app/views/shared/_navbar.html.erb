@@ -9,20 +9,26 @@
     <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
     <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+  </div>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
-      <div class="dropdown">
-        <img src="<%= current_user.photo %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "Profile", root_path %></a></li>
-          <li><%= link_to "Dashboard", root_path %></li>
-          <li><%= link_to "Add a boat", new_boat_path %></li>
-          <li><%= link_to "Log out", root_path %></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+
+     <% if user_signed_in? %>
+        <div class="dropdown">
+            <img src="<%= current_user.photo %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to "Profile", root_path %></a></li>
+              <li><%= link_to "Dashboard", root_path %></li>
+              <li><%= link_to "Add a boat", new_boat_path %></li>
+              <li><%= link_to "Log out", root_path %></li>
+            </ul>
+          </div>
+      <% else %>
+        <%= link_to "Sign in", user_session_path, class: 'btn btn-primary' %>
+      <% end %>
+     </div>
+
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
