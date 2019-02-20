@@ -6,11 +6,5 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-  # validates :first_name, presence: true, allow_blank: false
-  # validates :last_name, presence: true, allow_blank: false
-  # validates :rating, numericality: true
-  #  validates :email, presence: true, uniqueness: true, allow_blank: false
-
   mount_uploader :photo, PhotoUploader
 end
