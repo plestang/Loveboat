@@ -13,16 +13,17 @@
         <p>Member since</p>
       </div>
     </div>
-  <div class="card stats-section">
-    <div class="card-content">
-      <h3>758</h3>
-      <p>Rentals</p>
+    <div class="card stats-section">
+      <div class="card-content">
+        <h3>758</h3>
+        <p>Rentals</p>
+      </div>
     </div>
-  </div>
-  <div class="card stats-section">
-    <div class="card-content">
-      <h3><%= @user.rating %></h3>
-      <p>Rating</p>
+    <div class="card stats-section">
+      <div class="card-content">
+        <h3><%= @user.rating %></h3>
+        <p>Rating</p>
+      </div>
     </div>
     <div class="card content-section">
       <div class="card-content">
@@ -32,7 +33,8 @@
         </p>
       </div>
     </div>
-  <h2><%= @user.first_name %>'s Boats</h2>
+  </div>
+    <h2><%= @user.first_name %>'s Boats</h2>
   <div class="row">
     <% @user.boats.each do |boat| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -48,6 +50,6 @@
         </div>
       </div>
       <% end  %>
-    </div>
+  </div>
 </div>
 
