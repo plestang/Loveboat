@@ -1,7 +1,8 @@
 <div class="profile-grid">
   <div class="card-user main-section">
     <div class="card-content">
-      <%= image_tag 'alki.jpg', class: 'img-circle', width: '100' %>
+      <div></div>
+      <%= image_tag @user.photo.url, class: 'img-circle', width: '100' %>
       <!-- <img src="images/seb.jpeg" alt="" width="150" class="img-circle"> -->
       <h2><%= @user.first_name %> <%= @user.last_name %></h2>
       <p><%= @user.email %></p>
@@ -10,7 +11,7 @@
   </div>
   <div class="card stats-section">
     <div class="card-content">
-      <h3><%= @user.created_at %></h3>
+      <h3><%= @user.created_at.strftime("%b %d, %Y") %></h3>
       <p>Member since</p>
     </div>
   </div>
@@ -40,26 +41,27 @@
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card-trip">
-      <%= image_tag 'boat1.jpg'%>
-      <div class="card-trip-infos">
-        <div>
-          <h2>Yacht</h2>
-          <p>This baby is the best</p>
+        <%= image_tag 'boat1.jpg'%>
+        <div class="card-trip-infos">
+          <div>
+            <h2>Yacht</h2>
+            <p>This baby is the best</p>
+          </div>
+          <h2 class="card-trip-pricing">100EUR</h2>
         </div>
-        <h2 class="card-trip-pricing">100EUR</h2>
-      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card-trip">
-      <%= image_tag 'boat2.jpg'%>
-      <div class="card-trip-infos">
-        <div>
-          <h2>Yacht</h2>
-          <p>This baby is the best</p>
+        <%= image_tag 'boat2.jpg'%>
+        <div class="card-trip-infos">
+          <div>
+            <h2>Yacht</h2>
+            <p>This baby is the best</p>
+          </div>
+          <h2 class="card-trip-pricing">100EUR</h2>
         </div>
-        <h2 class="card-trip-pricing">100EUR</h2>
       </div>
     </div>
   </div>
