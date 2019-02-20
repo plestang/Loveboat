@@ -10,5 +10,4 @@ Rails.application.routes.draw do
 
   resources :users, only: [:destroy, :edit, :update, :show]
 
-  get "/search", to: "boats#search", as: :search
 end
