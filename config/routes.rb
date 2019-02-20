@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [:create, :new]
   end
-  resources :bookings, only: [:destroy, :edit, :update, :show]
+  resources :bookings, only: [:index, :destroy, :edit, :update, :show]
 
   resources :users, only: [:destroy, :edit, :update, :show]
 end
