@@ -1,13 +1,25 @@
-#bookings {
-
+@media (min-width: 568px) {
+  .message {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(220,224,244,0.4);
+  }
 }
 
+@media (max-width: 568px) {
 .message {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(220,224,244,0.4);
+    display: block;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(220,224,244,0.4);
+  }
 }
+
+.message a {
+  color: $sea-peach;
+}
+
 .message:last-child {
   border-bottom: none;
 }
@@ -55,3 +67,4 @@
   font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
+
