@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Boat.destroy_all
+Booking.destroy_all
 User.destroy_all
+
 greg =  User.new({
   first_name: "Grégoire",
   last_name: "Courtois",
@@ -54,7 +57,6 @@ mathieu.save
 
 puts "Created #{User.count} users"
 
-Boat.destroy_all
 
 BOATS_CATEGORY = ["Sailboat","Motorboat","Catamaran","RIB","Houseboat"]
 USERS = [greg, mathieu, alki, pierre]

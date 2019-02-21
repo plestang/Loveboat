@@ -40,31 +40,35 @@
   </div>
     <h2><%= @user.first_name %>'s Boats</h2>
   <div class="row">
+
     <% @user.boats.each do |boat| %>
-      <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="<col-xs-12 col-sm-6 col-md-4">
         <div class="card-trip">
-          <%= link_to boat_path(boat) do  %>
-            <%= image_tag boat.photo.url %>
-          <% end  %>
+          <%= link_to boat_path(boat) do %>
+          <img src=<%= cl_image_path boat.photo %>>
+          <% end %>
           <div class="card-trip-infos">
             <div>
               <h2><%= boat.category %></h2>
               <p><%= boat.description %></p>
-              <% if boat.user == current_user  %>
-                <p><%= link_to "Edit", edit_user_path(@user) %> | <%= link_to "Delete", user_path(@user), method: :delete %></p>
-              <% end  %>
             </div>
-            <h2 class="card-trip-pricing"><%= boat.price_per_day %> €</h2>
+            <div>
+            <h2 class="card-trip-pricing"><%= link_to "#{boat.price_per_day} €", boat_path(boat) %>
+              </h2>
+            <img src='<%= boat.user.photo %>' class="avatar-card"/>
+
+            </div>
           </div>
         </div>
-
       </div>
     <% end %>
+
+
   </div>
 
 
 
 
+
 </div>
-  <% end  %>
 </div>

@@ -3,21 +3,23 @@ height: 250px;
 width: 300px;
 margin: 0;
 padding: 0;
-border: solid 1px;
-border-color: rgb(230,230,2300);
-border-shadow:0 2px 4px rgba(0,0,0,0.1) !important;
+// border: solid 1px;
+// border-color: rgb(230,230,2300);
+// border-shadow:0 2px 4px rgba(0,0,0,0.1) !important;
 font-size: 100%;
 font: inherit;
 vertical-align: baseline;
-background-color: rgb(240,240,240);
-border-radius: 5px;
+// background-color: rgb(240,240,240);
+border-radius: 10px;
 position: relative;
 
 }
 
 #book_btn{
   position:absolute;
-  bottom: 30px;
-  left:40%;
+  bottom: 50%;
+  left:30%;
+  border-radius: 10px;
+  padding: 40px;
 
 }
