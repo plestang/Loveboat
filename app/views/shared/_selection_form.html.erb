@@ -1,0 +1,9 @@
+<div class="form">
+  <%= form_tag boats_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+    <%= select_tag :query, options_for_select(["Sailboat","Motorboat","Catamaran","RIB","Houseboat"]), placeholder: "Description" , class: "form-control" %>
+    <%= number_field_tag "max_price", value = "Max price", in: 80..500, class: "form-control" %>
+    <%= text_field_tag "address", value = "City", class: "form-control" %>
+    <%= select_date Date.today, prefix: :start_date %>
+    <%= submit_tag "Discover", class: "btn-treehouse" %>
+  <% end %>
+</div>

@@ -1,13 +1,15 @@
 .btn-treehouse {
   color: white;
-  padding: 10px 30px;
-  border-radius: 1px;
+  padding: 5px 15px;
+  border-radius: 4px;
   font-weight: bold;
   background: $sea-peach;
   transition: background 0.3s ease;
+  opacity: 0.9;
 }
 
 .btn-treehouse:hover {
+  color: white;
   opacity: 1;
   background: $sea-peach;
   text-decoration: none;

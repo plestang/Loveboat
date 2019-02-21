@@ -31,13 +31,11 @@
 
               <li><%= link_to "Add a boat", new_boat_path %></li>
               <li><%= link_to "Help", root_path %></li>
-              <li><%= link_to "Log out", root_path %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, method: :delete)%></li>
             </ul>
           </div>
       <% else %>
-        <div class="btn-treehouse">
-         <%= link_to "Sign in", user_session_path %>
-       </div>
+         <%= link_to "Sign in", user_session_path, class: "btn-treehouse text" %>
       <% end %>
      </div>
     </div>
@@ -45,13 +43,25 @@
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
+
+    <% if user_signed_in? %>
     <div class="dropdown">
       <i class="fas fa-bars dropdown-toggle" data-toggle="dropdown" role="button"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Host</a></li>
-        <li><a href="#">Trips</a></li>
-        <li><a href="#">Messagese</a></li>
+
+        <% if current_user %>
+                <li><%= link_to "Profile", user_path(current_user) %></a></li>
+              <% end %>
+
+        <li><%= link_to "Add a boat", new_boat_path %></li>
+        <li><%= link_to "Help", root_path %></li>
+        <li><%= link_to('Logout', destroy_user_session_path, method: :delete)%></li>
       </ul>
     </div>
+     <% else %>
+        <div class="btn-treehouse">
+         <%= link_to "Sign in", user_session_path %>
+       </div>
+      <% end %>
   </div>
 </div>
