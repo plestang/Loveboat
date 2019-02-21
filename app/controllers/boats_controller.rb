@@ -25,11 +25,18 @@ class BoatsController < ApplicationController
       @boats = Boat.all
     end
     authorize @boats
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lng: boat.longitude,
+        lat: boat.latitude
+      }
+    end
   end
 
   def show
     authorize @boat
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @boats = Boat.where(id: params[:id])
     @markers = @boats.map do |boat|
       {
         lng: boat.longitude,
