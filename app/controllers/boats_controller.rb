@@ -1,8 +1,30 @@
 class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :edit, :update, :destroy]
 
+  # def index
+  #   @boats = policy_scope(Boat)
+  # end
+  # def search
+  #   if params[:search][:category].empty?
+  #     redirect_to boats_path
+  #   else
+  #     @boats = Boat.where(category: params[:search][:category])
+  #   end
+  # end
+
   def index
     @boats = policy_scope(Boat)
+    @boats = Boat.all
+    @search = params[:query]
+    if @search.present?
+      @boats = Boat.where(category: @search)
+        .where("price_per_day <= ?", params[:max_price].to_i)
+        .where(address: params[:address])
+    else
+      @boats = policy_scope(Boat)
+      @boats = Boat.all
+    end
+    authorize @boats
   end
 
   def show
@@ -15,6 +37,10 @@ class BoatsController < ApplicationController
   end
 
   def edit
+  end
+
+  def filter
+    @boats = Boat.where(category: "RIB")
   end
 
   def create
