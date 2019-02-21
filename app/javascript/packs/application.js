@@ -24,11 +24,6 @@ import {initAutocomplete} from '../plugins/init_autocomplete';
 
 initAutocomplete();
 
-// $(document).ready(function(){
-//   $('.slider').slick({
-//     setting-name: setting-value
-//   });
-// });
-import {slick} from '../plugins/slicker';
-slick();
+import { slicker } from '../plugins/slicker';
+slicker()
 toggleDateInputs();
