@@ -1,18 +1,19 @@
 .booking{
-height: 250px;
-width: 300px;
-margin: 0;
-padding: 0;
-border: solid 1px;
-border-color: rgb(230,230,2300);
-border-shadow:0 2px 4px rgba(0,0,0,0.1) !important;
-font-size: 100%;
-font: inherit;
-vertical-align: baseline;
-background-color: rgb(240,240,240);
-border-radius: 10px;
-position: relative;
-
+  width: 300px;
+  margin: 0;
+  padding: 10px 20px;
+  border: solid 1px;
+  border-color: rgb(230,230,2300);
+  border-shadow:0 2px 4px rgba(0,0,0,0.1) !important;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+  h3{
+  margin-top: 0px;
+  }
 }
 
 #book_btn{
