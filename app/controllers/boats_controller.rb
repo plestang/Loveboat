@@ -18,7 +18,8 @@ class BoatsController < ApplicationController
     @search = params[:query]
     if @search.present?
       @boats = Boat.where(category: @search)
-      # .where(price_per_day: (200..350))
+        .where("price_per_day <= ?", params[:max_price].to_i)
+        .where(address: params[:address])
     else
       @boats = policy_scope(Boat)
       @boats = Boat.all
