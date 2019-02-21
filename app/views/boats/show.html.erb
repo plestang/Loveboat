@@ -1,4 +1,9 @@
-<div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');">
+<div class="slider">
+  <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
+  <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
+  <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
+</div>
+<!-- <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"> -->
 
   <%= link_to user_path(@boat.user) do %>
   <%= image_tag @boat.user.photo.url, class: "avatar-100px" %>
