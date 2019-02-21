@@ -13,16 +13,32 @@
       <div class="main-description">
         <div class="description">
           <div class="title">
+            <div class="icon-column">
+              <i class="fas fa-arrows-alt-h"></i>
+              <h4><%= @boat.length %></h4>
+            </div>
+            <div class="icon-column">
+              <i class="fas fa-bed"></i>
+              <h4><%= @boat.cabin %> cabins</h4>
+            </div>
+            <div class="icon-column">
+              <i class="fas fa-user"></i>
+              <h4><%= @boat.capacity %> guests</h4>
+            </div>
+            <div class="icon-column">
+              <i class="fas fa-money-bill"></i>
+              <h4><%= @boat.price_per_day %>€/per day</h4>
+            </div>
 
           </div>
           <div class="row">
             <div class="options">
-
               <p> Book as from <%= @boat.price_per_day %> € / day or <%= (@boat.price_per_day * 0.9 * 7).round() %> € / week and save <%= (@boat.price_per_day * 0.1*7).round() %> € </p>
             </div>
             <div class="boat-text">
           </div>
-            <h3><%= @boat.category %></h3>
+            <h3><%= @boat.name %></h3>
+            <h4><%= @boat.category %></h4>
             <p><%= @boat.description %></p>
           </div>
         </div>
@@ -30,8 +46,16 @@
     </div>
     <div class="col-xs-12 col-md-3">
       <div class="booking">
-        <%= link_to "Book now", new_boat_booking_path(@boat), class: 'btn btn-primary', id:'book_btn'  %>
-        </button>
+        <h3 class="text-center">Book today!</h3>
+        <div class='widget-content' data-unavailable="<%= @boat.unavailable_dates.to_json %>">
+          <%= simple_form_for ([@boat, Booking.new]) do |f| %>
+            <%= f.input :start_date, as: :string, placeholder: "From", wrapper_html: { class: "datepicker" } %>
+            <%= f.input :end_date, as: :string, placeholder: "To", disabled: true, wrapper_html: { class: "datepicker" } %>
+            <div class="btn-container">
+              <%= f.button :submit, class: "btn-treehouse btn-center" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
