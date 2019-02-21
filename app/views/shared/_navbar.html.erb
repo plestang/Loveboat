@@ -9,13 +9,11 @@
 
     <%= link_to "All boats", boats_path, class: "navbar-wagon-item navbar-wagon-link"  %>
     <%= link_to "My bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link"  %>
-<<<<<<< HEAD
+
     <% if current_user %>
-      <%= link_to "My boats", user_path(current_user.id), class: "navbar-wagon-item navbar-wagon-link"  %>
+      <%= link_to "My boats", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link"  %>
     <% end %>
-=======
-    <%= link_to "My boats", user_path(current_user), class: "navbar-wagon-item navbar-wagon-link"  %>
->>>>>>> 84494874f1016821088453205817805a12fcd395
+
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
@@ -24,13 +22,11 @@
         <div class="dropdown">
             <img src="<%= current_user.photo %>" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-<<<<<<< HEAD
+
               <% if current_user %>
-              <li><%= link_to "Profile", user_path(current_user.id) %></a></li>
+                <li><%= link_to "Profile", user_path(current_user) %></a></li>
               <% end %>
-=======
-              <li><%= link_to "Profile", user_path(current_user) %></a></li>
->>>>>>> 84494874f1016821088453205817805a12fcd395
+
               <!-- <li><#%= link_to "My boats", my_boats_path %></li> -->
 
               <li><%= link_to "Add a boat", new_boat_path %></li>
