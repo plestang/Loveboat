@@ -1,4 +1,4 @@
-const slick = () => {
+const slicker = () => {
     $('.slider').slick({
     dots: true,
     infinite: true,
@@ -11,4 +11,4 @@ const slick = () => {
   });
 };
 
-export { slick };
+export { slicker };
