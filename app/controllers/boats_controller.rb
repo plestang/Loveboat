@@ -13,17 +13,16 @@ class BoatsController < ApplicationController
   # end
 
   def index
-    # @boats = policy_scope(Boat)
-    # @boats = Boat.all
-    # @search = params["search"]
-    # if @search.present?
-    #   @category = @search[:category]
-    #   @boats = Boat.where(category: @category)
-    #   # .where(price_per_day: (200..350))
-    # else
+    @boats = policy_scope(Boat)
+    @boats = Boat.all
+    @search = params[:query]
+    if @search.present?
+      @boats = Boat.where(category: @search)
+      # .where(price_per_day: (200..350))
+    else
       @boats = policy_scope(Boat)
       @boats = Boat.all
-    # end
+    end
     authorize @boats
   end
 
