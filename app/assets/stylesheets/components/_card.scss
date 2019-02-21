@@ -22,23 +22,35 @@
 
 .card-trip p {
   font-size: 12px;
-  opacity: .7;
+  opacity: 0.7;
   margin: 0;
 }
 
+.card-trip-pricing {
+  color: $sea-peach;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   position: relative;
+  align-items: flex-end;
 }
+
+.left{
+    display: flex;
+    justify-content: space-between;
+    width: 36%;
+
+}
+
 
 .card-trip-infos a {
   font-size: .8em;
   color: $sea-peach;
 }
+
 
 .card-trip-infos .card-trip-user {
   position: absolute;

@@ -5,15 +5,24 @@
           <%= link_to boat_path(boat) do %>
           <img src=<%= cl_image_path boat.photo %>>
           <% end %>
+
         <div class="card-trip-infos">
-          <div>
-            <h2><%= boat.name %></h2>
-            <p><%= boat.description %></p>
-          </div>
-          <div>
-          <h2 class="card-trip-pricing"><%= link_to "#{boat.price_per_day} €", boat_path(boat) %></h2>
-          <img src='<%= boat.user.photo %>' class="avatar-card"/>
-          </div>
+
+            <div class="left">
+              <div>
+                <h2><%= boat.capacity %><i class="fas fa-user"></i></h2>
+                <p><%= boat.user.rating %></p>
+              </div>
+              <div>
+                <h2><%= boat.category %></h2>
+                <p><%= boat.address %></p>
+              </div>
+            </div>
+
+              <div>
+              <h2 class="card-trip-pricing"> <%= boat.price_per_day %>€ </h2>
+              <img src='<%= boat.user.photo %>' class="avatar-card"/>
+              </div>
         </div>
       </div>
       <% end %>

@@ -61,7 +61,7 @@ puts "Created #{User.count} users"
 BOATS_CATEGORY = ["Sailboat","Motorboat","Catamaran","Semi-rigid","Houseboat"]
 USERS = [greg, mathieu, alki, pierre]
 PHOTOS = %w(pexels-photo-533595 pexels-photo-531474 pexels-photo-570987 pexels-photo-296278 pexels-photo-382167 pexels-photo-296242 pexels-photo-275637 pexels-photo-351774 pexels-photo-273886 pexels-photo-244517 pexels-photo-218999 pexels-photo-1655166 ship-boat-lake-garda-italy pexels-photo-209978 pexels-photo-127160 sailing-ship-vessel-boat-sea-37859 pexels-photo-1586795 sunrise-phu-quoc-island-ocean pexels-photo-1295036 luxury-yacht-boat-speed-water-163236 light-sunset-water-boat pexels-photo-675764 pexels-photo-1555313 pexels-photo-1007836)
-ADDRESS = ["Marseille","Nice","Ajaccio","Bonifaccio", "La Rochelle", "La Trinité sur mer", "Brest", "Paimpol", "Saint Malo", "Dunkerque"]
+ADDRESS = ["Marseille 13000","Nice 06000","Ajaccio 20090","Bonifaccio 20169", "La Rochelle 17000", "La Trinité sur mer 56470", "Brest 29200", "Paimpol 22500", "Saint Malo 35400", "Dunkerque 59140"]
 BOATS_NAME= [ "Sun Rise 34", "Elan 340","Patago 39","Dufour 445 Grand Large","Fifty 24", "Corsair 28","sun odyssey 349"]
   # resource_type = "image"
   # type = "upload"

@@ -4,9 +4,11 @@
 
     <% @bookings.each do |booking| %>
       <div class="message">
-        <%= image_tag booking.boat.photo.url, class: 'avatar-square' %>
+        <%= link_to boat_path(booking.boat) do %>
+          <%= image_tag booking.boat.photo.url, class: 'avatar-square' %>
+        <% end %>
         <div class="message-name">
-          <h3><%= booking.boat.description %></h3>
+          <h3><%= booking.boat.name %></h3>
         </div>
         <div class="message-date">
           <p><strong>Owner</strong></p>
@@ -29,7 +31,7 @@
         <div class="message-date">
           <p><strong>Price</strong></p>
           <p>
-            <%= booking.boat.price_per_day %> €
+            <%= (booking.end_date - booking.start_date).to_i * booking.boat.price_per_day %> €
           </p>
         </div>
         <div class="message-edit">
