@@ -3,7 +3,7 @@
       <% @boats.each do |boat| %>
       <div class="card-trip">
           <%= link_to boat_path(boat) do %>
-          <img src=<%= cl_image_path boat.photo.first %>>
+          <img src=<%= cl_image_path boat.photo %>>
           <% end %>
         <div class="card-trip-infos">
           <div>

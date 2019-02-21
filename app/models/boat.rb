@@ -3,5 +3,5 @@ class Boat < ApplicationRecord
   belongs_to :user
 
   mount_uploader :photo, PhotoUploader
-  mount_uploader :add_photo, PhotoUploader
+  mount_uploaders :other_photos, PhotoUploader
 end

@@ -19,6 +19,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     authorize @boat
     if @boat.save
       redirect_to boat_path(@boat)
@@ -41,7 +42,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:price_per_day, :category, :description, { photo: [] })
+    params.require(:boat).permit(:price_per_day, :category, :description, :photo, other_photos: [])
   end
 
   def set_boat
