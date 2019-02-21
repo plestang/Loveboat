@@ -2,17 +2,20 @@
   <div class="container">
     <h1 class="text-center">Book today!</h1>
     <div class='form-container'>
-      <%= simple_form_for [@boat, @booking] do |f| %>
-        <%= f.input :start_date, as: :string, class: 'form-control datepicker', placeholder: 'yyyy/mm/dd'%>
-        <%= f.input :end_date, as: :string, class: 'form-control datepicker', placeholder: 'yyyy/mm/dd' %>
+
+      <div class='widget-content' data-unavailable="<%= @boat.unavailable_dates.to_json %>">
+        <%= simple_form_for ([@boat, @booking]) do |f| %>
+
+        <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "datepicker" } %>
+        <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "datepicker" } %>
         <div class="btn-container">
           <%= f.button :submit, class: "btn-treehouse" %></div>
         <% end %>
+      </div>
       <div class="text-center">
         <p><%= link_to "Back to list of boats", boats_path %></p>
       </div>
     </div>
   </div>
 </div>
-
 

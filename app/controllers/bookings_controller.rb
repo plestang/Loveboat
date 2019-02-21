@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @boat = Boat.find(params[:boat_id])
     @booking = Booking.new
     authorize @booking
+    authorize @boat
   end
 
   def edit
@@ -24,8 +25,9 @@ class BookingsController < ApplicationController
 
   def create
     sleep 1.5
+    @boat = Boat.find(params[:boat_id])
     @booking = Booking.new(booking_params)
-    @booking.boat = Boat.find(params[:boat_id])
+    @booking.boat = @boat
     @booking.user = current_user
     authorize @booking
     if @booking.save
