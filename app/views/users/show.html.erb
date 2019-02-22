@@ -1,45 +1,48 @@
 <div class="content">
-<div class="container">
-  <div class="profile-grid">
-    <div class="card-user main-section">
-        <%= image_tag @user.photo.url, class: 'img-circle', width: '100' %>
-        <!-- <img src="images/seb.jpeg" alt="" width="150" class="img-circle"> -->
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-        <p><%= @user.email %></p>
-        <p><%= @user.phone_number %></p>
-        <% if @user == current_user  %>
-        <p><a href="#bookings">See my bookings</a></p>
-        <p><%= link_to "Edit", edit_user_path(@user) %> | <%= link_to "Delete", user_path(@user), method: :delete %></p>
-        <% end  %>
-    </div>
-    <div class="card stats-section">
-      <div class="card-content">
-        <h3><%= @user.created_at.strftime("%b %d, %Y") %></h3>
+  <div class="container">
+    <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <div class="profile-grid">
+      <div class="card-user main-section">
+          <p class="text-center"><%= image_tag @user.photo.url, class: 'img-circle', width: '150' %></p>
+          <p><%= @user.email %></p>
+          <p><%= @user.phone_number %></p>
+          <% if @user == current_user  %>
+          <p><a href="#bookings">See my bookings</a> |
+          <%= link_to "Edit profile", edit_user_path(@user) %></p>
+          <% end  %>
+      </div>
+      <div class="stats-section">
         <p>Member since</p>
+        <h3><%= @user.created_at.strftime("%b %d, %Y") %></h3>
+
       </div>
-    </div>
-    <div class="card stats-section">
-      <div class="card-content">
-        <h3>758</h3>
-        <p>Rentals</p>
+      <div class="stats-section">
+        <p>Boats</p>
+        <h3><%= @user.boats.count %></h3>
       </div>
-    </div>
-    <div class="card stats-section">
-      <div class="card-content">
-        <h3><%= @user.rating %></h3>
+      <div class="stats-section">
         <p>Rating</p>
+          <div class="padded">
+            <div class="star-ratings-css">
+              <div class="star-ratings-css-top" style="width: <%= ((@user.rating / 5)*125).to_i %>%">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <div class="star-ratings-css-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
-    <div class="card content-section">
-      <div class="card-content">
+      <div class="content-section">
         <h3>More about <%= @user.first_name %></h3>
         <p class="text-justify">
           I hate sailing and boats, they make me throw up!
         </p>
       </div>
     </div>
-  </div>
-</div>
+    <hr>
 
+    <h3>Reviews about <%= @user.first_name %></h3>
+
+  </div>
 </div>
 
