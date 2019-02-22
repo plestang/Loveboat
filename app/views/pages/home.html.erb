@@ -13,29 +13,6 @@
 
 <div class="container home">
   <h3 class="text-center">Why not one of them?</h3>
-  <div class="row">
-
-    <% @boats.each do |boat| %>
-      <div class="<col-xs-12 col-sm-6 col-md-4">
-        <div class="card-trip">
-          <%= link_to boat_path(boat) do %>
-          <img src=<%= cl_image_path boat.photo %>>
-          <% end %>
-          <div class="card-trip-infos">
-            <div>
-              <h2><%= boat.category %></h2>
-              <p><%= boat.description %></p>
-            </div>
-            <div>
-            <h2 class="card-trip-pricing"><%= link_to "#{boat.price_per_day} €", boat_path(boat) %>
-              </h2>
-            <img src='<%= boat.user.photo %>' class="avatar-card"/>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<%= render "shared/card" %>
 </div>
 </div>
