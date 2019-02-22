@@ -35,7 +35,9 @@
             </ul>
           </div>
       <% else %>
-         <%= link_to "Sign in", user_session_path, class: "btn-treehouse text" %>
+        <div class="btn-container button-txt">
+          <%= link_to "Sign in", user_session_path, class: "btn-treehouse" %>
+        </div>
       <% end %>
      </div>
     </div>
@@ -59,8 +61,8 @@
       </ul>
     </div>
      <% else %>
-        <div class="btn-treehouse">
-         <%= link_to "Sign in", user_session_path %>
+        <div class="btn-container button-txt">
+         <%= link_to "Sign in", user_session_path, class: "btn-treehouse" %>
        </div>
       <% end %>
   </div>
