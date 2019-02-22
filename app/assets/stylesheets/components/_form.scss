@@ -19,6 +19,10 @@
     width: 450px;
   }
 
+  .boats-form-container {
+    width: 500px;
+  }
+
   .boat-form-container {
     width: 600px;
     margin: 10px auto;
@@ -52,6 +56,10 @@
 
 @media (max-width: 568px) {
 .search-form-container {
+    width: 350px;
+  }
+
+.boats-form-container {
     width: 350px;
   }
 
