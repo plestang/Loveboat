@@ -63,8 +63,10 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    binding.pry
     @boat.user = current_user
     authorize @boat
+
     if @boat.save
       redirect_to boat_path(@boat)
     else
@@ -86,6 +88,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
+
     params.require(:boat).permit(:price_per_day, :category, :description, :name, :cabin, :capacity, :length, :address, :photo, :photo_2, :photo_3)
   end
 
