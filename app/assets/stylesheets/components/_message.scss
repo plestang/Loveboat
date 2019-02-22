@@ -1,29 +1,42 @@
 @media (min-width: 1100px) {
   .message {
+    background-color: white;
     display: flex;
     align-items: center;
-    padding: 20px;
-    width: 950px;
+    padding: 10px;
     border-bottom: 1px solid rgba(220,224,244,0.4);
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
 }
 
 @media (min-width: 568px) {
   .message {
+    background-color: white;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid rgba(220,224,244,0.4);
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
   }
 }
 
 @media (max-width: 568px) {
 .message {
+    background-color: white;
     display: block;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     border-bottom: 1px solid rgba(220,224,244,0.4);
+    margin: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
   }
+}
+
+.fa-edit {
+  font-size: 1.2em;
 }
 
 .message a {
@@ -36,8 +49,8 @@
 
 .message-name {
   flex-grow: 1;
-  padding: 30px;
-  font-size: 13px;
+  padding: 25px;
+  font-size: 14px;
   color: rgba(0,0,0,0.7);
 
 }
@@ -48,13 +61,13 @@
 }
 
 .message-date {
-  padding: 30px;
+  padding: 25px;
 
 }
 .message-date {
   // padding-left: 20px;
 
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(0,0,0,0.7);
 }
 
@@ -63,26 +76,10 @@
   color: rgba(0,0,0,0.9);
 }
 
-
-.message-status {
-  padding: 10px;
-  font-size: 14px;
-  font-weight: bold;
-}
-.status.accepted {
-  color: #04A366;
-}
-.status.declined {
-  color: red;
-}
-.status.pending {
-  color: lightgrey;
-}
-
 .message-edit {
-  padding: 30px;
+  padding: 25px;
   // padding-left: 40px;
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(0,0,0,0.7);
 }
 
