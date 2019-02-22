@@ -1,37 +1,31 @@
 <div class="row">
-    <div class="home-cards col-xs-12">
-      <% @boats.each do |boat| %>
+  <% @boats.each do |boat| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="card-trip">
-          <%= link_to boat_path(boat) do %>
-          <img src=<%= cl_image_path boat.photo %>>
-          <% end %>
-
+        <%= link_to boat_path(boat) do %>
+        <img src=<%= cl_image_path boat.photo %>>
+        <% end %>
         <div class="card-trip-infos">
-
-              <div>
-                <h2><i class="fas fa-user"></i> <%= boat.capacity %> <i class="fas fa-circle point-size"></i> </h2>
-              </div>
-              <div>
-                <h2><%= boat.category %></h2>
-                <p><%= boat.address %></p>
-              </div>
-              <div class="star-ratings">
-              <div class="star-ratings-top" style="width: <%= ((boat.user.rating / 5)*125).to_i %>%">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <div class="star-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-
+          <div>
+            <h2><i class="fas fa-user"></i> <%= boat.capacity %> </h2>
+          </div>
+          <div class="padding-left">
+            <h2><%= boat.category %></h2>
+            <p><%= boat.address %></p>
+          </div>
+          <div class="star-ratings">
+            <div class="star-ratings-top" style="width: <%= ((boat.user.rating / 5)*125).to_i %>%">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-
-
-
-              <div>
-              <h2 class="card-trip-pricing"> <%= boat.price_per_day %>€ </h2>
-              <img src='<%= boat.user.photo %>' class="avatar-card"/>
-              </div>
+            <div class="star-ratings-bottom"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+          </div>
+          <div>
+            <h2 class="card-trip-pricing"> <%= boat.price_per_day %>€ </h2>
+            <img src='<%= boat.user.photo %>' class="avatar-card"/>
+          </div>
         </div>
       </div>
-      <% end %>
     </div>
-  </div>
+  <% end %>
+</div>
