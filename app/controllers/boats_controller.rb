@@ -13,19 +13,23 @@ class BoatsController < ApplicationController
   # end
 
   def index
-    @boats = policy_scope(Boat)
-    @boats = Boat.all
-    @search = params[:query]
-    if @search.present?
-      @boats = Boat.where(category: @search)
-                   .where("price_per_day <= ?", params[:max_price].to_i)
-                   .where(address: params[:address])
+    @category = params[:query]
+    @address = params[:address]
+    if @address.present? && @category.present?
+      @boats = policy_scope(Boat)
+      @boats = Boat.where(address: @address).where(category: @category).where.not(latitude: nil, longitude: nil)
+    elsif @address.present?
+      @boats = policy_scope(Boat)
+      @boats = Boat.where(address: @address).where.not(latitude: nil, longitude: nil)
+    elsif @category.present?
+      @boats = policy_scope(Boat)
+      @boats = Boat.where(category: @category).where.not(latitude: nil, longitude: nil)
     else
       @boats = policy_scope(Boat)
-      @boats = Boat.all
+      @boats = Boat.where.not(latitude: nil, longitude: nil)
+
     end
     authorize @boats
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
     @markers = @boats.map do |boat|
       {
         lng: boat.longitude,
