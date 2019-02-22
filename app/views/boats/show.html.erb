@@ -1,5 +1,5 @@
 <div class="slider">
-  <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
+  <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.other_photos[0] %>');"></div>
   <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
   <div id="photo-banner" class="photo-banner" style="background-image: url('<%= @boat.photo.url %>');"></div>
 </div>
@@ -17,35 +17,35 @@
     <div class="col-xs-12 col-md-9">
       <div class="main-description">
         <div class="description">
-          <div class="title">
-            <div class="icon-column">
-              <i class="fas fa-arrows-alt-h"></i>
-              <h4><%= @boat.length %></h4>
-            </div>
-            <div class="icon-column">
-              <i class="fas fa-bed"></i>
-              <h4><%= @boat.cabin %> cabins</h4>
-            </div>
-            <div class="icon-column">
-              <i class="fas fa-user"></i>
-              <h4><%= @boat.capacity %> guests</h4>
-            </div>
-            <div class="icon-column">
-              <i class="fas fa-money-bill"></i>
-              <h4><%= @boat.price_per_day %>€/per day</h4>
-            </div>
-
-          </div>
-          <div class="row">
-            <div class="options">
-              <p> Book as from <%= @boat.price_per_day %> € / day or <%= (@boat.price_per_day * 0.9 * 7).round() %> € / week and save <%= (@boat.price_per_day * 0.1*7).round() %> € </p>
-            </div>
-            <div class="boat-text">
-          </div>
+           <div class="row display_inline">
             <h3><%= @boat.name %></h3>
-            <h4><%= @boat.category %></h4>
-            <p><%= @boat.description %></p>
-          </div>
+            <h4> - <%= @boat.category %></h4>
+           </div>
+            <div class="title">
+              <div class="icon-column">
+                <i class="fas fa-arrows-alt-h"></i>
+                <h4><%= @boat.length %>m</h4>
+              </div>
+              <div class="icon-column">
+                <i class="fas fa-bed"></i>
+                <h4><%= @boat.cabin %> cabins</h4>
+              </div>
+              <div class="icon-column">
+                <i class="fas fa-user"></i>
+                <h4><%= @boat.capacity %> guests</h4>
+              </div>
+              <div class="icon-column">
+                <i class="fas fa-money-bill"></i>
+                <h4><%= @boat.price_per_day %>€/per day</h4>
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="options">
+                <p> Book as from <%= @boat.price_per_day %> € / day or <%= (@boat.price_per_day * 0.9 * 7).round() %> € / week and save <%= (@boat.price_per_day * 0.1*7).round() %> € </p>
+              </div>
+              <p><%= @boat.description %></p>
+            </div>
         </div>
       </div>
     </div>

@@ -37,6 +37,7 @@ class BoatsController < ApplicationController
   def show
     authorize @boat
     @boats = Boat.where(id: params[:id])
+    raise
     @markers = @boats.map do |boat|
       {
         lng: boat.longitude,
