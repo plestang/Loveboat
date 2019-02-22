@@ -1,13 +1,15 @@
 <div class="content">
   <div class="container">
     <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+    <hr>
     <div class="profile-grid">
       <div class="card-user main-section">
           <p class="text-center"><%= image_tag @user.photo.url, class: 'img-circle', width: '150' %></p>
+          <hr>
           <p><%= @user.email %></p>
           <p><%= @user.phone_number %></p>
           <% if @user == current_user  %>
-          <p><a href="#bookings">See my bookings</a> |
+          <p><%= link_to "See my bookings", bookings_path %> |
           <%= link_to "Edit profile", edit_user_path(@user) %></p>
           <% end  %>
       </div>
@@ -41,8 +43,10 @@
     </div>
     <hr>
 
-    <h3>Reviews about <%= @user.first_name %></h3>
-
+      <h3><%= @user.first_name %>'s Boats</h3>
+    <hr>
+      <h3>Reviews about <%= @user.first_name %></h3>
+    <hr>
   </div>
 </div>
 
