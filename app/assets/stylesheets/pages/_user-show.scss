@@ -1,38 +1,38 @@
 .card-user {
   background: white;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
   // display: flex;
   // align-items: center;
   // justify-content: space-around;
-  margin: 10px;
+  // margin: 10px;
 }
 
-
-
 .padded {
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .main-section {
+  text-align: center;
   grid-row: 1 / span 2;
   grid-column: 1 / span 1;
 }
 
 .main-section a {
+  text-align: center;
   font-size: .8em;
   color: $sea-peach;
 }
 .stats-section h3 {
   text-align: center;
   color: $sea-peach;
-  font-size: 1.6em;
+  font-size: 1.5em;
 }
 
 .stats-section p {
   text-align: center;
   opacity: .3;
-  padding: 5px;
+  padding-top: 20px;
 }
 
 .content-section {
@@ -42,19 +42,49 @@
 
 .content-section h3 {
   font-size: 1.1em;
-  padding: 10px 30px;
+  padding: 5px 30px;
 }
 .content-section p {
   opacity: .6;
-  padding: 10px 30px;
+  padding: 5px 30px;
 }
+
+.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+
+  &-top {
+    color: $sea-peach;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: block;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+  &-bottom {
+    padding: 0;
+    display: block;
+    z-index: 0;
+  }
+}
+
+
 
 @media (min-width: 568px) {
 .profile-grid {
   display: grid;
   grid-template-columns: 300px 1fr 1fr 1fr;
   grid-template-rows: 50% 50%;
-  height: 400px;
+  height: 350px;
   margin-top: 30px;
   }
 }
