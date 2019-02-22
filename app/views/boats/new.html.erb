@@ -27,15 +27,10 @@
           <div class="form-group col-md-12">
           <%= f.input :description, placeholder: "Description", label: false %>
           </div>
-          <div class="form-group col-md-6">
-          <%= f.input :photo, placeholder: "Photo", label: false %>
-          <%= f.input :photo_cache, as: :hidden %>
-          </div>
-          <div class="form-group col-md-6">
+
+          <div class="form-group col-md-12">
           <%= f.file_field  :other_photos, :multiple => true %>
           </div>
-
-
             <div class="btn-container">
               <%= f.button :submit, class: "btn-treehouse" %></div>
         <% end %>
