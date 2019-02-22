@@ -10,7 +10,6 @@ import slick from 'slick-carousel';
 import { toggleDateInputs } from "../plugins/flatpickr";
 
 import { sweetAlert } from '../plugins/sweetalert';
-
 sweetAlert()
 
 
@@ -28,5 +27,4 @@ import { slicker } from '../plugins/slicker';
 slicker()
 toggleDateInputs();
 
-import { initSelect2 } from '../plugins/init_select2';
-// initSelect2();
+

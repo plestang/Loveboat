@@ -1,16 +1,19 @@
 import Swal from 'sweetalert2'
 
 const sweetAlert = () => {
-  const btn = document.getElementById('book_btn')
-
+  const btn = document.getElementById('booking-cta')
   if (btn) {
     btn.addEventListener('click', (event) => {
+      console.log("click")
       Swal.fire({
-        position: 'center',
+        // position: 'center',
         type: 'success',
-        title: 'Well done! Your boat has been booked. Enjoy the sea!',
+        title: 'Well done!',
+        text: ' Your boat has been booked. Enjoy the sea!',
+        footer: 'you will be redirected shortly to your bookings',
         showConfirmButton: false,
-        timer: 2000
+        timer: 3500,
+        width: 600,
       })
     })
   }
