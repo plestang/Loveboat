@@ -15,7 +15,6 @@ class BoatsController < ApplicationController
   def index
     @category = params[:query]
     @address = params[:address]
-    raise
     if @address.present? && @category.present?
       @boats = policy_scope(Boat)
       @boats = Boat.where(address: @address).where(category: @category).where.not(latitude: nil, longitude: nil)
