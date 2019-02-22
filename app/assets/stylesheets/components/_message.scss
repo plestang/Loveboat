@@ -1,3 +1,13 @@
+@media (min-width: 1100px) {
+  .message {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    width: 950px;
+    border-bottom: 1px solid rgba(220,224,244,0.4);
+  }
+}
+
 @media (min-width: 568px) {
   .message {
     display: flex;
@@ -25,19 +35,25 @@
 }
 
 .message-name {
-  // padding-left: 10px;
-  min-width: 50px;
-}
-.message-name h3 {
+  flex-grow: 1;
+  padding: 30px;
   font-size: 13px;
-  margin-bottom: 0px;
+  color: rgba(0,0,0,0.7);
+
+}
+
+.message-name strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
 }
 
 .message-date {
-  flex-grow: 1;
+  padding: 30px;
+
 }
 .message-date {
   // padding-left: 20px;
+
   font-size: 13px;
   color: rgba(0,0,0,0.7);
 }
@@ -49,6 +65,7 @@
 
 
 .message-status {
+  padding: 10px;
   font-size: 14px;
   font-weight: bold;
 }
@@ -63,6 +80,7 @@
 }
 
 .message-edit {
+  padding: 30px;
   // padding-left: 40px;
   font-size: 13px;
   color: rgba(0,0,0,0.7);

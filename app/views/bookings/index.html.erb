@@ -4,11 +4,14 @@
 
     <% @bookings.each do |booking| %>
       <div class="message">
-        <%= link_to boat_path(booking.boat) do %>
+        <!-- <div class="message-date"> -->
+          <%= link_to boat_path(booking.boat) do %>
           <%= image_tag booking.boat.photo.url, class: 'avatar-square' %>
         <% end %>
+        <!-- </div> -->
         <div class="message-name">
-          <h3><%= booking.boat.name %></h3>
+          <p><strong>Boat name</strong></p>
+          <p><%= booking.boat.name %></p>
         </div>
         <div class="message-date">
           <p><strong>Owner</strong></p>
@@ -36,7 +39,7 @@
         </div>
         <div class="message-edit">
           <p><strong><%= link_to "Edit", edit_booking_path(booking) %> </strong></p>
-          <p><%= link_to "Delete", booking_path(booking), method: :delete %></p>
+          <p><%= link_to "Delete", booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' }  %></p>
         </div>
       </div>
     <% end %>
