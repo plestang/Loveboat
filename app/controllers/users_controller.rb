@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.remote_photo_url = "https://res.cloudinary.com/dsiephejy/image/upload/v1551012304/avatar.png"
     authorize @user
     if @user.save
       redirect_to user_path(@user)
