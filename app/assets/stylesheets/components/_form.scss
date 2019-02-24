@@ -4,10 +4,6 @@
   font-size: .7em !important;
 }
 
-
-
-
-
 .form-container a {
   font-size: .8em;
   color: $sea-peach;
@@ -20,7 +16,9 @@
   }
 
   .boats-form-container {
-    width: 500px;
+    padding-top: 15px;
+    width: 600px;
+    margin-bottom: 70px;
   }
 
   .boat-form-container {
@@ -56,11 +54,12 @@
 
 @media (max-width: 568px) {
 .search-form-container {
-    width: 350px;
+    width: 300px;
   }
 
 .boats-form-container {
-    width: 350px;
+    padding-top: 15px;
+    width: 300px;
   }
 
   .boat-form-container {
