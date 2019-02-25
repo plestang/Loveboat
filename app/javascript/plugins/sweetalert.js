@@ -12,7 +12,7 @@ const sweetAlert = () => {
         text: ' Your boat has been booked. Enjoy the sea!',
         footer: 'you will be redirected shortly to your bookings',
         showConfirmButton: false,
-        timer: 3500,
+        timer: 4000,
         width: 600,
       })
     })

@@ -63,7 +63,6 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-    binding.pry
     @boat.user = current_user
     authorize @boat
 
