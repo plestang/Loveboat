@@ -1,10 +1,9 @@
 <div class="container">
   <div class="content">
+      <center><%= render "shared/selection_form_boats" %></center>
 
-    <h1 class="text-center"> Find the boat of your dreams !</h1>
-      <center><%= render "shared/selection_form" %></center>
-    <hr>
       <%= render "shared/card" %>
+
 
 
     <div
@@ -13,7 +12,7 @@
     height: 400px;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-
     </div>
+  <hr>
   </div>
 </div>
